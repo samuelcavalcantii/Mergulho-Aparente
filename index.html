@@ -16,10 +16,11 @@
       }
       main{
         background: #27C486;
-        height: 100vw;
+        height: 100vh;
+        
       }
-      .container{
-        width: 50%;
+      .container-md{
+        
         background: #3D3C3E;
         padding: 30px 40px;
         border-radius: 10px;
@@ -28,14 +29,14 @@
         left: 50%;
         transform: translate(-50%,-50%);
       }
-      .container h2{
+      .container-md h2{
         color: #27C486;
         font-weight: bold;
         border-left: 5px solid  #27C486;
         font-size: 2rem;
         padding-left: 15px;
       }
-      .container p{
+      .container-md p{
         color: white;
         
 
@@ -49,13 +50,13 @@
   </head>
   <body>
     <main>
-      <div class="container">
+      <div class="container-md">
         <div class="row">
           <div class="col-md-6">
             <h2>Calculadora <br>Mergulho Aparente</h2>
              <P>Calcular o mergulho aparente de uma camada a partir do mergulho verdadeiro e da orientação da seção.</P>
           </div>
-          <div class="class-md-col-6">
+          <div class="col-md-6">
             <form action="">
               <div class="form-group mb-0">
                 <label for="formGroupExampleInput" class="form-label"></label>
@@ -67,18 +68,18 @@
                 
 
               </div>
-              
-              <input class="btn btn-info" onclick="calcular()" type="button" value="Calcular" > 
-              <!--<input class="btn btn-warning" onclick="limpar()" type="button" value="C" >-->
-              <input class="btn btn-warning"type="reset" value="C">
+              <div class="mb-3 d-flex bd-highlight">
+                <input class=" m-2 d-inline  p-2 w-100 bd-highlight  btn btn-info" onclick="calcular()" type="button" value="Calcular" > 
+                <!--<input class="btn btn-warning" onclick="limpar()" type="button" value="C" >-->
+                <input class=" m-2 d-inline  p-2 w-100 bd-highlight btn btn-warning"type="reset" value="C">
+                
+                </div>
               <div class="mt-3 mb-3">
-                <input id="resultado" class="form-control" type="text" value="Mergulho aparente." aria-label="readonly input example" readonly>
+                  <input id="resultado" class="form-control" type="text" value="Mergulho aparente." aria-label="readonly input example" readonly>
+                
               </div>
-
             </form>
-
-
-
+            <div class="container text-light text-center">Samuel Cavalcanti </div>
           </div>
 
       <!--<div class="mb-3">
@@ -90,13 +91,11 @@
         <label for="exampleInputPassword1" class="form-label">Ângulo entre a seção e o strike</label>
         <input id="num2" type="text"  autocomplete="off">
       </div> -->
-      
-      
-
-
+   
         </div>
       </div>
     </main>
+    
     <script src="script.js"></script>
   </body>
 </html>
