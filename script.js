@@ -5,12 +5,12 @@ function calcular (){
   var num2 = document.getElementById('num2').value;
 
   if (num1 == ''|| num1 == null){
-      alert ('TEM QUE ESCREVE RUM NÚMERO NÉ????')
+      alert ('Digite um valor.')
       document.getElementById('num1').focus()
       return false
     }
   if (num2 == ''|| num2 == null){
-    alert ('TEM QUE ESCREVE RUM NÚMERO NÉ????')
+    alert ('Digite um valor.')
     document.getElementById('num2').focus()
     return false
     }
