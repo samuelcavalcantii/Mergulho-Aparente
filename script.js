@@ -1,3 +1,8 @@
+document.addEventListener('keypress', function(e){
+  if(e.which == 13){
+    calcular();
+  }
+}, false);
 
 function calcular (){
   var num1 = document.getElementById('num1').value;
