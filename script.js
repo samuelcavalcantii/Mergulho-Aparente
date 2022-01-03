@@ -1,8 +1,14 @@
 document.addEventListener('keypress', function(e){
-  if(e.which == 13){
+  if(e.keyCode == 13){
     calcular();
   }
 }, false);
+document.addEventListener('keydown', function(e){
+  if(e.keyCode == 46){
+    document.getElementById('limpar').click();
+  }
+}, false);
+
 
 function calcular (){
   var num1 = document.getElementById('num1').value;
@@ -33,7 +39,6 @@ function calcular (){
 
   document.getElementById('resultado').value = (`${resultado}°`)
 }
-// // function limpar () {
-//   document.getElementById('resultado').value= "resultado";
-// }
-
+//function limpar () {
+  //document.getElementById('resultado').value= "resultado";
+//}
