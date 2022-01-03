@@ -26,7 +26,7 @@ function calcular (){
   resultado = Math.round(Math.atan((resultado1 * resultado2))/(Math.PI/180),2)
   /*resultado = Math.atan(resultado3)*(Math.PI/180)*/
 
-  document.getElementById('resultado').value = resultado
+  document.getElementById('resultado').value = (`${resultado}°`)
 }
 // // function limpar () {
 //   document.getElementById('resultado').value= "resultado";
