@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Projeto Calculadora</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+
     <style>
       *{
         padding: 0px;
@@ -16,7 +20,8 @@
       }
       main{
         background: #27C486;
-        height: 100vh;
+        height: 100%;
+        padding: 10px;
         
       }
       .container-md{
@@ -43,6 +48,9 @@
         color: white;
         font-weight: bold;
       }
+      .form-label{
+        color: white;
+      }
     </style>
 
   </head>
@@ -53,34 +61,44 @@
           <div class="col-md-6">
             <h2>Calculadora <br>Mergulho Aparente</h2>
              <P>Calcula o mergulho aparente de uma camada a partir do mergulho verdadeiro e da orientação da seção, seguindo a relação:<br> Arco tangente do mergulho aparente = Tan(mergulho verdadeiro) * Cos (ângulo entre o strike e a direção da seção do mapa).
+             <p>Fator de exagero (e) = denominador da escala horizontal(NH)/denominador da escala vertical(NV).</p>
+              <hr class=" d-sm-none bg-light my-4">
 
              </P>
           </div>
           <div class="col-md-6">
             <form action="">
-              <div class="form-group mb-0">
-                <label for="formGroupExampleInput" class="form-label"></label>
+              <div class="form-group mb-3">
+                <label for="formGroupExampleInput" class="form-label">Mergulho Verdadeiro.</label>
                 <input type="number" class="form-control " id="num1" placeholder="Mergulho verdadeiro." autocomplete="off">
               </div>
-              <div class="form-group ">
-                <label for="formGroupExampleInput2" class="form-label"></label>
-                <input type="number" class="form-control " id="num2" placeholder="(°) entre a seção e o strike da camada." autocomplete="off">
-                
-
+              <div class="form-group mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Ângulo entre a seção e o strike.</label>
+                <input type="number" class="form-control " id="num2" placeholder="(°) entre a seção e o strike da camada." autocomplete="off">              
+              </div>
+              <div class="form-group mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Fator de exagero (e).</label>
+                <input type="number" class="form-control " id="num3" placeholder="Exagero vertical (e)" autocomplete="off">              
               </div>
               <div class="mb-3 d-flex bd-highlight">
                 <input class=" m-2 d-inline  p-2 w-100 bd-highlight  btn btn-info" onclick="calcular()" type="button" value="Calcular" > 
                 <!--<input class="btn btn-warning" onclick="limpar()" type="button" value="C" >-->
                 <input id="limpar" class=" m-2 d-inline  p-2 w-100 bd-highlight btn btn-warning" type="reset"  value="C">
-                
-                </div>
+              </div>
+
               <div class="mt-3 mb-3">
-                  <input id="resultado" class="form-control" type="text" value="Mergulho aparente." aria-label="readonly input example" readonly>
-                
+                  <input id="resultado1" class="form-control" type="text" value="Mergulho aparente." aria-label="readonly input example" readonly>
+                  
+              </div>
+              <div class="mt-3 mb-3">
+                  <input id="resultado2" class="form-control" type="text" value="Mergulho aparente com exagero vertical." aria-label="readonly input example" readonly>
+                  
               </div>
             </form>
-            <div class="container text-light text-center">
-              Desenvolvido<br>por <br> <a class="link-warning" href="https://github.com/samuelcavalcantii " target="_blank">Samuel Cavalcanti</a> <i class="bi bi-github"></i>  </div>
+            <div class="text-light text-center">
+              Desenvolvido<br>por<br><strong class="text-warning"><em>Samuel Cavalcanti</em></strong><a  href="https://github.com/samuelcavalcantii" target="_blank"><br><i class=" bi bi-github text-white"></i> </a>
+              <a  href="https://www.linkedin.com/in/samuel-gomes-559a96219/" target="_blank " <i class="pl-2 bi bi-linkedin text-white"></i></a>  
+            </div>
               
           </div>
 
