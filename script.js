@@ -41,7 +41,7 @@ function calcular (){
     
 
   resultado1 = Math.tan(num1*(Math.PI/180))
-  resultado2 = Math.cos(num2*(Math.PI/180))
+  resultado2 = Math.cos(0-num2*(Math.PI/180))
   resultado = Math.round(Math.atan((resultado1 * resultado2))/(Math.PI/180))
   /*resultado = Math.atan(resultado3)*(Math.PI/180)*/
   exagero_vertical =Math.atan( Math.tan(resultado * (Math.PI/180)) * num3)/(Math.PI/180)
