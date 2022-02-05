@@ -83,8 +83,8 @@
         <div class="row">
           <div class="col-md-6">
             <h1>Mergulho Aparente <br> Calculadora</h1>
-             <P>Calcula o mergulho aparente de uma camada a partir do mergulho verdadeiro e da orientação da seção, seguindo a relação:<br> Atan(Mergulho Aparente) = Tan(mergulho verdadeiro) * Cos (ângulo entre a direção de mergulho e o strike da seção).
-             <br> ad = Atan(tan (td)* cos(0-S))
+             <P>Calcula o mergulho aparente de uma camada a partir do mergulho verdadeiro e da orientação da seção, seguindo a relação:<br> Atan(Mergulho Aparente) = Tan(mergulho verdadeiro) * Cos (strike da seção - direção de mergulho).
+             <br> ad = Atan(tan (td)* cos(Strike-DipDirection))
              <p>Fator de exagero (e) = denominador da escala horizontal(NH)/denominador da escala vertical(NV).</p>
               <hr class=" d-sm-none bg-light my-4">
 
@@ -96,9 +96,16 @@
                 <label for="formGroupExampleInput" class="form-label">Mergulho Verdadeiro (td).</label>
                 <input type="number" class="form-control " id="num1" placeholder="0-90." autocomplete="off">
               </div>
-              <div class="form-group mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Ângulo entre a seção e a direção de mergulho (Strike-DipDirection).</label>
-                <input type="number" class="form-control " id="num2" placeholder="0-90." autocomplete="off">              
+              <div class="row">
+                <div class="form-group col">
+                  <label for="formGroupExampleInput2" class="form-label">Strike da seção.</label>
+                  <input type="number" class="form-control " id="dir" placeholder="0-359." autocomplete="off">
+                </div>
+                <div class="form-group col">
+                  <label for="formGroupExampleInput2" class="form-label">Dip Direction.</label>
+                  <input type="number" class="form-control " id="num2" placeholder="0-359." autocomplete="off"> 
+                </div>              
+                
               </div>
               <div class="form-group mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Fator de exagero (vertical exaggeration).</label>
